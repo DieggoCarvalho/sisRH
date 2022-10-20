@@ -22,8 +22,17 @@
               <li class="nav-item px-3">
                 <a class="nav-link" href="/">Home</a>
               </li>
-              <li class="nav-item px-3">
-                <a class="nav-link" href="{{route('funcionarios.index')}}">Funcionários</a>
+              <li class="nav-item px-3 dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Funcionários</a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ route('funcionarios.create') }}" class="dropdown-item">Cadastrar Novo</a></li>
+                    <li><a href="{{ route('funcionarios.index') }}" class="dropdown-item">Lista de Funcionários</a></li>
+                    <li><hr class='dropdown-divider'/></li>
+                    @foreach ($departamentos as $departamento)
+                    <li><a href="" class="dropdown-item">{{ $departamento->nome }}</a></li>                     
+                    @endforeach
+
+                </ul>
               </li>
               <li class="nav-item px-3">
                 <a class="nav-link" href="{{route('cargos.index')}}">Cargos</a>

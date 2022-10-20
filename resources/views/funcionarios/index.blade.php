@@ -14,7 +14,7 @@
             <input type="text" name="buscaFuncionario" class="form-control form-control-lg" placeholder="Nome do Funcionário">
             <button class="btn btn-primary btn-lg" type="submit">Procurar</button>
         </div>
-        <a href="" class="btn btn-light border btn-lg">Limpar</a>
+        <a href="{{ route('funcionarios.index') }}" class="btn btn-light border btn-lg">Limpar</a>
     </form>
     <div class="table-responsive">
         <table class="table table-striped">

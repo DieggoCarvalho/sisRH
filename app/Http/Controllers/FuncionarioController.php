@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 
 class FuncionarioController extends Controller
 {   
-    public function index()
+    public function index(Request $request)
     {  
-        $funcionarios = Funcionario::all();
+        // dd($request);
+        $funcionarios = Funcionario::where('nome', 'like', '%'.$request->buscaFuncionario.'%')->orderBy('nome','asc')->get();
         $totalFuncionarios = Funcionario::all()->count();                          
         return view('funcionarios.index', compact('funcionarios', 'totalFuncionarios'));
     }
