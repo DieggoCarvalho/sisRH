@@ -39,7 +39,7 @@
         </div>
       </nav>
 
-      <div class="container mb-5"> 
+      <div class="container mb-3 p-4 bg-white shadow-sm position-relative"> 
         @yield('conteudo')
       </div>
 

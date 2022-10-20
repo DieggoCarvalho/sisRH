@@ -9,8 +9,9 @@ class FuncionarioController extends Controller
 {   
     public function index()
     {  
-        $funcionarios = Funcionario::all();                          
-        return view('funcionarios.index', compact('funcionarios'));
+        $funcionarios = Funcionario::all();
+        $totalFuncionarios = Funcionario::all()->count();                          
+        return view('funcionarios.index', compact('funcionarios', 'totalFuncionarios'));
     }
 
     public function create()
