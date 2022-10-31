@@ -3,7 +3,7 @@
 @section('title', 'Cadastrar Funcionário')
 
 @section('conteudo')
-    <div class="container-fluid shadow bg-white p-4">
+    <form class="container-fluid shadow bg-white p-4">
         <h1>Cadastrar Funcionário</h1>
         <div class="row mt-5 mb-4">
             <div class="col">
@@ -58,26 +58,34 @@
         <div class="row mb-4">
             <div class="col">
                 <div>
-                    <label for="departamento" class="form-label fw-bold">Departamento</label>
+                    <label for="id_departamento" class="form-label fw-bold">Departamento</label>
                     {{-- <input type="text" name="departamento" class="form-select form-select-lg bg-light" value="" --}}
                         {{-- required> --}}
-                    <select class="form-select form-select-lg" aria-label=".form-select-lg example">
-                        <option selected> </option>
+                    <select nome="id_departamento" id="id_departamento" class="form-select form-select-lg" aria-label=".form-select-lg example">
+                        <option value="">--</option>
+                        @foreach ($departamentos as $departamento)
+                            <option value="{{ $departamento->id }}">{{ $departamento->nome }}</option>
+                        @endforeach
+                        {{-- <option selected> </option>
                         <option value="1">Departamento de Tecnologia</option>
                         <option value="2">Departamento Financeiro</option>
                         <option value="3">Departamento Comercial</option>
                         <option value="4">Zeladoria</option>
-                        <option value="5">Recursos Humanos</option>
+                        <option value="5">Recursos Humanos</option> --}}
                     </select>    
                 </div>
             </div>
             <div class="col">
                 <div>
-                    <label for="cargo" class="form-label fw-bold">Cargo</label>
+                    <label for="id_cargo" class="form-label fw-bold">Cargo</label>
                     {{-- <input type="text" name="cargo" class="form-select form-select-lg bg-light" value=""
                         required> --}}
-                    <select class="form-select form-select-lg" aria-label=".form-select-lg example">
-                        <option selected> </option>
+                    <select nome="id_cargo" id="id_cargo" class="form-select form-select-lg" aria-label=".form-select-lg example">
+                        <option value="">--</option>
+                        @foreach ($cargos as $cargo)
+                            <option value="{{ $cargo->id }}">{{ $cargo->descricao }}</option>
+                        @endforeach
+                        {{-- <option selected> </option>
                         <option value="1">Gerente de Tecnologia</option>
                         <option value="2">Gerente Financeiro</option>
                         <option value="3">Gerente Comercial</option>
@@ -85,7 +93,7 @@
                         <option value="5">Auxiliar de Limpeza</option>
                         <option value="6">Auxiliar Administrativo</option>
                         <option value="7">Técnico de Informática</option>
-                        <option value="8">Assistente Comercial</option>
+                        <option value="8">Assistente Comercial</option> --}}
                     </select>
                 </div>
             </div>
@@ -102,9 +110,11 @@
             <label for="foto" class="form-label fw-bold">Foto</label>
             <input class="form-control" type="file" id="formFile" name="foto">
         </div>
-        <div>
-            <button type="button" class="btn btn-primary">Cadastrar</button>
-            <button type="button" class="btn btn-danger">Cancelar</button>
+        <input type="hidden" value="1" name="id_user">
+        <div class="col">
+            <button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
+            <a href="{{ route('funcionarios.index') }}" class="btn btn-danger btn-lg">Cancelar</a>
+            {{-- <button type="button" class="btn btn-danger">Cancelar</button> --}}
         </div>
-    </div>
+    </form>
 @endsection
