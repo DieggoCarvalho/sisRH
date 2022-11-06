@@ -29,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
             $departamentos = Departamento::select('id','nome')->orderBy('nome', 'asc')->get();
             view()->share('departamentos', $departamentos);
         } catch (Exception $e) {
+            echo 'Exceção capturada no boot: ', $e->getMessage(), "\n";
         } 
     }
 }
