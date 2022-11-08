@@ -25,11 +25,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        try {
+        // try {
             $departamentos = Departamento::select('id','nome')->orderBy('nome', 'asc')->get();
             view()->share('departamentos', $departamentos);
-        } catch (Exception $e) {
-            echo 'Exceção capturada no boot: ', $e->getMessage(), "\n";
-        } 
+        // } catch (Exception $e) {
+            // echo 'Exceção capturada no boot: ', $e->getMessage(), "\n";
+        // } 
     }
 }

@@ -30,6 +30,10 @@ Route::get('/cargos/create', [CargoController::class, 'create'])->name('cargos.c
 
 Route::get('/cargos', [CargoController::class, 'index'])->name('cargos.index');
 
+Route::post('/cargos', [CargoController::class, 'store'])->name('cargos.store');
+
 Route::get('/departamentos', [DepartamentoController::class, 'index'])->name('departamentos.index');
 
 Route::get('/departamentos/create', [DepartamentoController::class, 'create'])->name('departamentos.create');
+
+Route::post('/departamentos', [CargoController::class, 'store'])->name('departamentos.store');

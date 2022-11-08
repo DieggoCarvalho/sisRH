@@ -14,4 +14,12 @@ class CargoController extends Controller
     public function create(){
         return view('cargos.create');
     }
+
+    public function store(Request $request)
+    {
+        $input = $request->toArray();
+        Cargo::create($input);
+
+        return redirect()->route('cargos.index')->with('Sucesso', 'Cargo Cadastrado com Sucesso!');
+    }
 }

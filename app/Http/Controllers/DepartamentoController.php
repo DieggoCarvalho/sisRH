@@ -17,4 +17,12 @@ class DepartamentoController extends Controller
     {
         return view('departamentos.create');
     }
+
+    public function store(Request $request)
+    {
+        $input = $request->toArray();
+        Departamento::create($input);
+
+        return redirect()->route('departamentos.index')->with('Sucesso', 'Departamento Cadastrado com Sucesso!');
+    }
 }
