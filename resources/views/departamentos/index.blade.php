@@ -7,14 +7,14 @@
         <h1 class="mb-4">Departamentos</h1>
         <a href="{{ route('departamentos.create') }}" class="btn btn-primary position-absolute top-0 end-0 m-4 
         rounded-circle fs-4"><i class="bi bi-person-plus-fill"></i></a>
-        <p>Total de Departamentos: ??</p>
+        <p>Total de Departamentos: {{ $totalDepartamentos }}</p>
 
-    <form action="" method="GET" class="mb-3 d-flex justify-content-end">
+    <form action="" method="get" class="mb-3 d-flex justify-content-end">
         <div class="input-group me-3">
             <input type="text" name="buscaDepartamento" class="form-control form-control-lg" placeholder="Nome do Departamento">
             <button class="btn btn-primary btn-lg" type="submit">Procurar</button>
         </div>
-        <a href="" class="btn btn-light border btn-lg">Limpar</a>
+        <a href="{{ route('departamentos.index') }}" class="btn btn-light border btn-lg">Limpar</a>
     </form>
                 
         <div class="table-responsive">

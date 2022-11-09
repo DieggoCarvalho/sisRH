@@ -36,4 +36,4 @@ Route::get('/departamentos', [DepartamentoController::class, 'index'])->name('de
 
 Route::get('/departamentos/create', [DepartamentoController::class, 'create'])->name('departamentos.create');
 
-Route::post('/departamentos', [CargoController::class, 'store'])->name('departamentos.store');
+Route::post('/departamentos', [DepartamentoController::class, 'store'])->name('departamentos.store');

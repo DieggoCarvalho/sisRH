@@ -7,7 +7,7 @@
     <a href="{{ route('cargos.create') }}" class="btn btn-primary position-absolute top-0 end-0 m-4 
     rounded-circle fs-4"><i class="bi bi-plus"></i></a>
 
-    <p>Total de Cargos: ??</p>
+    <p>Total de Cargos: {{ $totalCargos }}</p>
 
     <form action="" method="GET" class="mb-3 d-flex justify-content-end">
         <div class="input-group me-3">
