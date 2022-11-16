@@ -41,7 +41,7 @@
                 <a class="nav-link" href="{{route('departamentos.index')}}">Departamento</a>
               </li>
               <li class="nav-item px-3">
-                <a class="nav-link" href="#">Usuários</a>
+                <a class="nav-link" href="{{route('usuarios.index')}}">Usuários</a>
               </li>
             </ul>
           </div>
