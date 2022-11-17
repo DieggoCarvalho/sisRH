@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class DepartamentoController extends Controller
 {
+    public function __construct()
+    {
+       $this->middleware('auth');
+        
+    }
+
     public function index(Request $request)
     {
         $departamentos = Departamento::where('nome', 'like', '%'.$request->buscaDepartamento.'%')->orderBy('nome','asc')->get();
@@ -28,3 +34,4 @@ class DepartamentoController extends Controller
         return redirect()->route('departamentos.index')->with('Sucesso', 'Departamento Cadastrado com Sucesso!');
     }
 }
+// By: DIEGO ALBUQUERQUE DE CARVALHO

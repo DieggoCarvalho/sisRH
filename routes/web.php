@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FuncionarioController;
 use App\Http\Controllers\CargoController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsuarioController;
@@ -29,7 +30,8 @@ Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.ind
 Route::get('/usuarios/create', [UsuarioController::class, 'create'])->name('usuarios.create');
 Route::post('/usuarios', [UsuarioController::class, 'store'])->name('usuarios.store');
 
-
+//ROTA DASHBOARD
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
 // Route::get('/', function () {
 //     return view('index');   //pagina inicial
@@ -58,3 +60,5 @@ Route::get('/departamentos', [DepartamentoController::class, 'index'])->name('de
 Route::get('/departamentos/create', [DepartamentoController::class, 'create'])->name('departamentos.create');
 
 Route::post('/departamentos', [DepartamentoController::class, 'store'])->name('departamentos.store');
+
+// By: DIEGO ALBUQUERQUE DE CARVALHO

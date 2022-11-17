@@ -2,7 +2,7 @@
 
 @section('title', 'Usuários')
 
-@section('content')
+@section('conteudo')
     <h1 class="mb-4">Usuários</h1>
 
     @if (Session::get('sucesso'))
@@ -16,6 +16,7 @@
                 <th width="60">ID</th>
                 <th>Nome</th>
                 <th>E-mail</th>
+                <th>Tipo</th>
                 <th width="160">Ação</th>
             </tr>
         </thead>
@@ -25,6 +26,7 @@
                 <td class="align-middle text-center">{{ $usuario->id }}</td>
                 <td class="align-middle">{{ $usuario->name }}</td>
                 <td class="align-middle">{{ $usuario->email }}</td>
+                <td class="align-middle">{{ $usuario->tipo }}</td>
                 <td class="align-middle text-center">
                     <a href="{{ $usuario->id }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
                     <a href="{{ $usuario->id }}" class="btn btn-danger" title="Excluir"><i class="bi bi-trash"></i></a>

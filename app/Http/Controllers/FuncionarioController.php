@@ -9,6 +9,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 class FuncionarioController extends Controller
 {   
+    public function __construct()
+    {
+       $this->middleware('auth');
+        
+    }
+
     public function index(Request $request)
     {  
         // dd($request);
@@ -95,3 +101,4 @@ class FuncionarioController extends Controller
         return redirect()->route('funcionarios.index')->with('Sucesso', 'Funcionário Deletado com Sucesso!');
     }
 }
+// By: DIEGO ALBUQUERQUE DE CARVALHO

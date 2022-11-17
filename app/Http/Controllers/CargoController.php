@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class CargoController extends Controller
 {
+    public function __construct()
+    {
+       $this->middleware('auth');
+        
+    }
+    
     public function index(Request $request){
         $cargos = Cargo::where('descricao', 'like', '%'.$request->buscaCargo.'%')->orderBy('descricao','asc')->get();
         // $cargos = Cargo::all();
@@ -27,3 +33,4 @@ class CargoController extends Controller
         return redirect()->route('cargos.index')->with('Sucesso', 'Cargo Cadastrado com Sucesso!');
     }
 }
+// By: DIEGO ALBUQUERQUE DE CARVALHO
